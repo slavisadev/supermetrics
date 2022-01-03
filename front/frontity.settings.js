@@ -3,8 +3,8 @@ const settings = {
   "state": {
     "frontity": {
       "url": "https://test.frontity.org",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "title": "SuperMetrics Store and Blog",
+      "description": "Just for testing purposes"
     }
   },
   "packages": [
@@ -26,17 +26,13 @@ const settings = {
               "/category/travel/"
             ],
             [
-              "Black Chair",
-              "/products/black-chair/"
-            ],
-            [
-              "Slavisa",
-              "/slavisa-perisic/"
+              "Pictures",
+              "/picture/nature/"
             ]
           ],
           "featured": {
-            "showOnList": false,
-            "showOnPost": false
+            "showOnList": true,
+            "showOnPost": true
           }
         }
       }
@@ -45,12 +41,12 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "http://supermetricswp.slavisa.us/",
+          "url": "http://supermetricswp.slavisa.us",
           "postTypes": [
             {
               type: "products",
               endpoint: "products",
-              archive: "/products"
+              archive: "/products_archive"
             }
           ]
         }

@@ -1,5 +1,4 @@
 import { connect, styled, decode } from "frontity";
-import Item from "./list-item";
 import Pagination from "./pagination";
 
 const Home = ({ state }) => {

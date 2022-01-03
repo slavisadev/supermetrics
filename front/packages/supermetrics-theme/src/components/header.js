@@ -1,7 +1,6 @@
 import { connect, styled } from "frontity";
 import Link from "./link";
 import Navigation from "./navigation";
-import MobileMenu from "./menu";
 
 const Header = ({ state }) => {
   return (
@@ -9,7 +8,10 @@ const Header = ({ state }) => {
       <Container className="container py-3">
         <header>
           <div className="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-            <LogoLink className="d-flex align-items-center text-dark text-decoration-none">SuperMetrics</LogoLink>
+            <LogoLink
+              className="d-flex align-items-center text-dark text-decoration-none"
+              href="/"
+            >SuperMetrics</LogoLink>
             <Navigation />
           </div>
           <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
@@ -37,8 +39,4 @@ const MainTitle = styled.h1`
 const LogoLink = styled.a`
   color: rgba(255, 255, 255, 0.7);
   font-size: 30px;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
 `;

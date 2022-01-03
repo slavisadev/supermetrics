@@ -1,11 +1,10 @@
-import { connect, styled, decode } from "frontity";
-import Item from "./list-item";
+import {connect, styled, decode} from "frontity";
+import ItemProduct from "./list-item-product";
 import Pagination from "./pagination";
-
-const List = ({ state }) => {
+const List = ({state}) => {
   // Get the data of the current list.
   const data = state.source.get(state.router.link);
-
+  
   return (
     <Container>
       {/* If the list is a taxonomy, we render a title. */}
@@ -15,25 +14,25 @@ const List = ({ state }) => {
           <b>{decode(state.source[data.taxonomy][data.id].name)}</b>
         </Header>
       )}
-
+      
       {/* If the list is for a specific author, we render a title. */}
       {data.isAuthor && (
         <Header>
           Author: <b>{decode(state.source.author[data.id].name)}</b>
         </Header>
       )}
-
-      {data && (
-        <h1>testt</h1>
-      )}
+  
+  
+      <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        {/* Iterate over the items of the list. */}
+        {data.items.map(({type, id}) => {
+          const item = state.source[type][id];
+          // Render one Item component for each one.
+          return <ItemProduct key={item.id} item={item}/>;
+        })}
+      </div>
       
-      {/* Iterate over the items of the list. */}
-      {data.items.map(({ type, id }) => {
-        const item = state.source[type][id];
-        // Render one Item component for each one.
-        return <Item key={item.id} item={item} />;
-      })}
-      <Pagination />
+      <Pagination/>
     </Container>
   );
 };

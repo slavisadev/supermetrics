@@ -659,12 +659,15 @@ function twentytwentyone_add_ie_class()
     <?php
 }
 
+/**
+ * added by Slavisa
+ */
 add_action('wp_footer', 'twentytwentyone_add_ie_class');
 
-function create_posttype()
+function create_post_type_products()
 {
     register_post_type('products',
-        array(
+        [
             'labels'       => array(
                 'name'          => __('Products'),
                 'singular_name' => __('Product')
@@ -673,11 +676,12 @@ function create_posttype()
             'has_archive'  => true,
             'rewrite'      => array('slug' => 'products'),
             'show_in_rest' => true,
-        )
+            'supports'     => array('title', 'editor', 'thumbnail')
+        ]
     );
 }
 
-add_action('init', 'create_posttype');
+add_action('init', 'create_post_type_products');
 
 function create_pictures_hierarchical_taxonomy()
 {
@@ -704,7 +708,6 @@ function create_pictures_hierarchical_taxonomy()
         'query_var'         => true,
         'rewrite'           => ['slug' => 'picture'],
     ]);
-
 }
 
 add_action('init', 'create_pictures_hierarchical_taxonomy', 0);

@@ -1,4 +1,4 @@
-import { connect, styled } from "frontity";
+import {connect, styled} from "frontity";
 import Link from "./link";
 
 /**
@@ -6,15 +6,18 @@ import Link from "./link";
  *
  * It renders the navigation links
  */
-const Nav = ({ state }) => (
+const Nav = ({state}) => (
   <nav className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
     {state.theme.menu.map(([name, link]) => {
       // Check if the link matched the current page url
       const data = state.source.get(state.router.link);
       const isCurrentPage = data.route === link;
-
+      
       return (
-        <a className="me-3 py-2 text-dark text-decoration-none" href={link}>{name}</a>
+        <a
+          key={name}
+          aria-current={isCurrentPage ? "page" : undefined}
+          className="me-3 py-2 text-dark text-decoration-none" href={link}>{name}</a>
       );
     })}
   </nav>
