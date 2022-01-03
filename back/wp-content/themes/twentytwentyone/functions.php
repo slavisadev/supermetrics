@@ -661,10 +661,8 @@ function twentytwentyone_add_ie_class()
 
 add_action('wp_footer', 'twentytwentyone_add_ie_class');
 
-// Our custom post type function
 function create_posttype()
 {
-
     register_post_type('products',
         array(
             'labels'       => array(
@@ -675,17 +673,14 @@ function create_posttype()
             'has_archive'  => true,
             'rewrite'      => array('slug' => 'products'),
             'show_in_rest' => true,
-
         )
     );
 }
 
-// Hooking up our function to theme setup
 add_action('init', 'create_posttype');
 
 function create_pictures_hierarchical_taxonomy()
 {
-
     $labels = [
         'name'              => _x('Pictures', 'taxonomy general name'),
         'singular_name'     => _x('Picture', 'taxonomy singular name'),
@@ -700,7 +695,7 @@ function create_pictures_hierarchical_taxonomy()
         'menu_name'         => __('Pictures'),
     ];
 
-    register_taxonomy('pictures', ['product'], [
+    register_taxonomy('pictures', ['products'], [
         'hierarchical'      => true,
         'labels'            => $labels,
         'show_ui'           => true,
