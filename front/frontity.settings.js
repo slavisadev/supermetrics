@@ -9,7 +9,7 @@ const settings = {
   },
   "packages": [
     {
-      "name": "@frontity/mars-theme",
+      "name": "@frontity/supermetrics-theme",
       "state": {
         "theme": {
           "menu": [
@@ -26,12 +26,12 @@ const settings = {
               "/category/travel/"
             ],
             [
-              "Japan",
-              "/tag/japan/"
+              "Black Chair",
+              "/products/black-chair/"
             ],
             [
-              "About Us",
-              "/about-us/"
+              "Slavisa",
+              "/slavisa-perisic/"
             ]
           ],
           "featured": {
@@ -45,7 +45,14 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "http://supermetricswp.slavisa.us/"
+          "url": "http://supermetricswp.slavisa.us/",
+          "postTypes": [
+            {
+              type: "products",
+              endpoint: "products",
+              archive: "/products"
+            }
+          ]
         }
       }
     },
