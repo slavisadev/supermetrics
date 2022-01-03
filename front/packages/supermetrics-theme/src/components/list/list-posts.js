@@ -48,6 +48,7 @@ export default connect(ListPosts);
 const Section = styled.section`
   margin: 0;
   list-style: none;
+  width:960px;
 `;
 
 const Article = styled.article``;

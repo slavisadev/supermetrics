@@ -1,8 +1,8 @@
-import { connect, styled } from "frontity";
+import {connect, styled} from "frontity";
 import Link from "./link";
 import Navigation from "./navigation";
 
-const Header = ({ state }) => {
+const Header = ({state}) => {
   return (
     <>
       <Container className="container py-3">
@@ -12,7 +12,7 @@ const Header = ({ state }) => {
               className="d-flex align-items-center text-dark text-decoration-none"
               href="/"
             >SuperMetrics</LogoLink>
-            <Navigation />
+            <Navigation/>
           </div>
           <div className="pricing-header p-3 pb-md-4 mx-auto text-center">
             <MainTitle className="display-4 fw-normal">Welcome to our store</MainTitle>
@@ -27,8 +27,9 @@ const Header = ({ state }) => {
 // Connect the Header component to get access to the `state` in it's `props`
 export default connect(Header);
 
- const Container = styled.div`
-   width: 960px;
+const Container = styled.div`
+   max-width: 960px;
+    width: 100%;
  `;
 
 const MainTitle = styled.h1`
