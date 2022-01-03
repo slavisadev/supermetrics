@@ -20,22 +20,16 @@ const Item = ({state, item}) => {
         <div className="card-header py-3">
           <h4 className="my-0 fw-normal">
             <Link link={item.link}>
-              <FeaturedMedia id={item.acf.logo}/>
+              {state.theme.featured.showOnList && (
+                <FeaturedMedia id={item.featured_media}/>
+              )}
               <Title dangerouslySetInnerHTML={{__html: item.acf.name}}/>
             </Link>
           </h4>
         </div>
         <div className="card-body">
           <h1 className="card-title pricing-card-title">$ {item.acf.price}</h1>
-          {/*
-       * If the want to show featured media in the
-       * list of featured posts, we render the media.
-       */}
-          {state.theme.featured.showOnList && (
-            <FeaturedMedia id={item.featured_media}/>
-          )}
           <div>
-            {/* If the post has an author, we render a clickable author text. */}
             {author && (
               <StyledLink link={author.link}>
                 <AuthorName>
@@ -54,7 +48,9 @@ const Item = ({state, item}) => {
               <Excerpt dangerouslySetInnerHTML={{__html: item.excerpt.rendered}}/>
             )}
           </div>
-          <button type="button" className="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+          <a
+            href={item.link}
+            className="w-100 btn btn-lg btn-outline-primary">View</a>
         </div>
       </div>
     </div>

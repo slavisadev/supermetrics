@@ -2,6 +2,7 @@ import {Global, css, connect, styled, Head} from "frontity";
 import Switch from "@frontity/components/switch";
 import Header from "./header";
 import List from "./list";
+import ListPosts from "./list/list-posts";
 import Home from "./list/home";
 import Post from "./post";
 import Loading from "./loading";
@@ -55,7 +56,8 @@ const Theme = ({state}) => {
         <Switch>
           <Loading when={data.isFetching}/>
           <Home when={data.isHome}/>
-          <List when={data.isArchive}/>
+          <List when={data.isProductsArchive}/>
+          <ListPosts when={data.isPostsArchive}/>
           <Post when={data.isPostType}/>
           <PageError when={data.isError}/>
         </Switch>

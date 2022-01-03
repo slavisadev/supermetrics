@@ -18,16 +18,12 @@ const settings = {
               "/"
             ],
             [
-              "Nature",
-              "/category/nature/"
+              "Products",
+              "/products_archive/"
             ],
             [
-              "Travel",
-              "/category/travel/"
-            ],
-            [
-              "Pictures",
-              "/picture/nature/"
+              "Blog",
+              "/blog/"
             ]
           ],
           "featured": {
@@ -47,6 +43,11 @@ const settings = {
               type: "products",
               endpoint: "products",
               archive: "/products_archive"
+            },
+            {
+              type: "posts",
+              endpoint: "posts",
+              archive: "/blog"
             }
           ]
         }

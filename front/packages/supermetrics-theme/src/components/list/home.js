@@ -8,7 +8,7 @@ const Home = ({ state }) => {
   return (
     <Container>
         <Header>
-          <b>Our <a href="/products">Products</a> page is waiting for you.</b>
+          <b>Our <a href="/products_archive">Products</a> page is waiting for you.</b>
         </Header>
       <Pagination />
     </Container>
